@@ -398,3 +398,15 @@ Method _unsubscribeFromAllTrades(exchange, cb)_
 * _cb_ : result callback (optional)
 
 In case method was called successfully, callback _result_ will be _true_
+
+## Unsubscribe
+
+Used to unsubscribe globally from a single exchange or from all exchanges
+
+Method _unsubscribe(exchange, cb)_
+
+* _exchange_ : exchange identifier (optional, if not defined subscriptions will be cancelled for all exchanges)
+
+* _cb_ : result callback (optional)
+
+In case method was called successfully, callback _result_ will be _true_

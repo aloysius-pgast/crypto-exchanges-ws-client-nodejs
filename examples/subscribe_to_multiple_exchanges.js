@@ -38,12 +38,16 @@ client.on('ready', function(data){
     setTimeout(function(){
         client.resyncOrderBooks('bittrex', ['USDT-NEO']);
     }, 30000);
+    // after 60s, unsubscribe from all exchanges
+    setTimeout(function(){
+        console.log("--- Unsubscribing from all exchanges ---");
+        client.unsubscribe();
+    }, 60000);
 });
 
 //-- Process notifications
 // tickers notifications
 client.on('ticker', function(evt){
-    console.log(this);
     console.log(`\n=== Got '${evt.pair}' 'ticker' event from '${evt.exchange}' === `);
     console.log(evt);
 });
