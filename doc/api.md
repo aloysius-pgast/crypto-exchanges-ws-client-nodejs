@@ -6,6 +6,8 @@ Constructor takes a single mandatory _uri_ parameter :
 
 An object with following available properties (all optional) can also be passed as second argument :
 
+* _apiKey_ : string, api key configured on gateway (used to restrict access)
+
 * _autoConnect_ : boolean, if true client will initiate first connection automatically (default = _true_)
 
 * _globalListener_ : if true, a global _notification_ event will be emitted for all trading related events and individual events won't be emitted (default = _false_)
