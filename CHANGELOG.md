@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.0.3]
+* Support for Klines (requires [Crypto Exchange Gateway](https://github.com/aloysius-pgast/crypto-exchanges-gateway) >= 1.4.0)
+
 ## [v1.0.2]
 * Allows to provide _API Key_ in constructor (in case _API Key_ is configured on gateway)
 

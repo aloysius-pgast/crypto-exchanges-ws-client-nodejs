@@ -221,6 +221,26 @@ _Example_
 ```
 _NB_ : _id_ property should be considered as optional as it might not be available on all exchanges (ie: don't rely on it)
 
+### klines
+
+_Example_
+
+```
+{
+    "exchange":"binance",
+    "pair":"USDT-ETH",
+    "interval":"5m",
+    "data":{
+        "timestamp":1515410100,
+        "open":1135.5,
+        "close":1131.76,
+        "high":1136.3,
+        "low":1130.13,
+        "volume":74.30783
+    }
+}
+```
+
 # Methods
 
 All methods accept a callback as last argument to have access to the reply from exchange :
@@ -260,7 +280,6 @@ In case method was called successfully, callback _result_ will be as below :
     ...
 }
 ```
-
 ## Subscribe to tickers
 
 Used to subscribe to tickers for a list of pairs
@@ -394,6 +413,52 @@ In case method was called successfully, callback _result_ will be _true_
 Used to unsubscribe from trades for all currently subscribed pairs
 
 Method _unsubscribeFromAllTrades(exchange, cb)_
+
+* _exchange_ : exchange identifier
+
+* _cb_ : result callback (optional)
+
+In case method was called successfully, callback _result_ will be _true_
+
+## Subscribe to klines
+
+Used to subscribe to klines for a list of pairs
+
+Method _subscribeToKlines(exchange, pairs, interval, reset, cb)_
+
+* _exchange_ : exchange identifier
+
+* _pairs_ : array of pairs to subscribed to (ex: _['USDT-BTC']_)
+
+* _interval_ : klines interval (ex: _5m_)
+
+* _reset_ : if _true_, previous subscriptions will be discarded (optional, default = _false_)
+
+* _cb_ : result callback (optional)
+
+In case method was called successfully, callback _result_ will be _true_
+
+## Unsubscribe from klines
+
+Used to unsubscribe from tickers for a list of pairs
+
+Method _unsubscribeFromKlines(exchange, pairs, interval, cb)_
+
+* _exchange_ : exchange identifier
+
+* _pairs_ : array of pairs to subscribed to (ex: _['USDT-BTC']_)
+
+* _interval_ : klines interval (optional, if not defined will unsubscribe for all intervals)
+
+* _cb_ : result callback (optional)
+
+In case method was called successfully, callback _result_ will be _true_
+
+## Unsubscribe from all klines
+
+Used to unsubscribe from klines for all currently subscribed pairs
+
+Method _unsubscribeFromAllKlines(exchange, cb)_
 
 * _exchange_ : exchange identifier
 

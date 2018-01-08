@@ -8,6 +8,8 @@ _NB_ : for the moment it **only works with branch _develop_** of the gateway
 
 * Implement methods for subscribing to tickers, order books & trade for Bittrex, Poloniex & Binance
 
+* Implement methods for subscribing to klines (Binance only)
+
 * Handle automatic reconnection in (I think !) every possible scenario
 
 ## Installation
