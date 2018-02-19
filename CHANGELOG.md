@@ -1,5 +1,8 @@
 # Change Log
 
+## [v1.0.4]
+* Support for Ticker Monitor (requires [Crypto Exchange Gateway](https://github.com/aloysius-pgast/crypto-exchanges-gateway) >= 1.64.0)
+
 ## [v1.0.3]
 * Support for Klines (requires [Crypto Exchange Gateway](https://github.com/aloysius-pgast/crypto-exchanges-gateway) >= 1.4.0)
 

@@ -10,6 +10,8 @@ _NB_ : for the moment it **only works with branch _develop_** of the gateway
 
 * Implement methods for subscribing to klines (Binance only)
 
+* Implement method to subscribe to Ticker Monitor (alerts) feed
+
 * Handle automatic reconnection in (I think !) every possible scenario
 
 ## Installation

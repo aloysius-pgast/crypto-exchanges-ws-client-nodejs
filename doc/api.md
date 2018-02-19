@@ -18,6 +18,22 @@ An object with following available properties (all optional) can also be passed 
 
 * _pingTimeout_ : _integer_, how many seconds to wait for a reply to WS PING, before reconnecting (default = 30000)
 
+* _tickerMonitor_ : _object_
+```
+{
+    /* enable / disable tickerMonitor subscription (default = false)*/
+    enabled:boolean,
+    /* types of events to receive */
+    types:{
+        /* set to 'true' to receive an event when an alert becomes 'active' */
+        active:boolean,
+        /* set to 'true' to receive an event when an alert becomes 'inactive' */
+        inactive:boolean
+    },
+    /* set to 'true' to receive state of every existing alert which are active/inactive upon connecting/reconnecting */
+    getInitialState:boolean
+}
+```
 # Emitted events
 
 ## Connection related events
@@ -238,6 +254,61 @@ _Example_
         "low":1130.13,
         "volume":74.30783
     }
+}
+```
+
+### tickerMonitor
+
+_Example_
+
+```
+{
+    "id":1,
+    "name":"Alert1",
+    "any":false,
+    "status":{
+        "value":"active",
+        "timestamp":1519042447.839
+    },
+    "conditions":[
+        {
+            "status":{
+                "value":"active",
+                "timestamp":1519042442.817
+            },
+            "origin":{
+                "type":"exchange",
+                "id":"binance"
+            },
+            "value":134.902,
+            "condition":{
+                "field":"buy",
+                "operator":"gt",
+                "value":130.8,
+                "pair":"USDT-NEO"
+            }
+        },
+        {
+            "status":{
+                "value":"active",
+                "timestamp":1519042442.817
+            },
+            "origin":{
+                "type":"service",
+                "id":"coinmarketcap"
+            },
+            "value":136.56,
+            "condition":{
+                "field":"price_usd",
+                "operator":"in",
+                "value":[
+                    -5,
+                    150
+                ],
+                "symbol":"NEO"
+            }
+        }
+    ]
 }
 ```
 
