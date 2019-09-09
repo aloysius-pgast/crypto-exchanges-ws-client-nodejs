@@ -248,6 +248,8 @@ _Example_
     "interval":"5m",
     "data":{
         "timestamp":1515410100,
+        "remainingTime":0,
+        "closed":true,
         "open":1135.5,
         "close":1131.76,
         "high":1136.3,
